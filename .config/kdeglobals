@@ -132,12 +132,17 @@ ForegroundNormal=#cac4cf
 ForegroundPositive=#00e479
 ForegroundVisited=#ebb2ff
 
+[DirSelect Dialog]
+DirSelectDialog Size=1536,936
+History Items[$e]=file:$HOME/Projects/fedora-hyprland
+Splitter State=\x00\x00\x00\xff\x00\x00\x00\x01\x00\x00\x00\x02\x00\x00\x00\xd2\x00\x00\x02\xa8\x00\xff\xff\xff\xff\x01\x00\x00\x00\x01\x00
+
 [General]
 ColorScheme=MaterialYouDark
 ColorSchemeHash=3c0cecefbea43cdb8fe3da156e4a106f7384a526
 LastUsedCustomAccentColor=184,117,220
-XftHintStyle=hintslight
 TerminalApplication=kitty -1
+XftHintStyle=hintslight
 XftSubPixel=none
 fixed=JetBrainsMono Nerd Font,11,-1,5,400,0,0,0,0,0,0,0,0,0,0,1
 font=Rubik,11,-1,5,400,0,0,0,0,0,0,0,0,0,0,1
