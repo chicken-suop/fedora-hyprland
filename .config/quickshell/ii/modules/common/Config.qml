@@ -182,6 +182,7 @@ Singleton {
                     property int memoryWarningThreshold: 95
                     property int swapWarningThreshold: 85
                     property int cpuWarningThreshold: 90
+                    property int gpuLayout : 0 // 0: DGPU | 1: IGPU | 2: Hybrid
                 }
                 property list<string> screenList: [] // List of names, like "eDP-1", find out with 'hyprctl monitors' command
                 property JsonObject utilButtons: JsonObject {
