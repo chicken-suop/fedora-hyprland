@@ -97,6 +97,33 @@ To update the configs:
 - If you're experiencing missing or broken icons, try switching your icon pack in the KDE settings and also check troubleshooting steps in the wiki, it's an issue with Adwaita.
 - **Terminal colors not loading/invisible text**: If your terminal text appears invisible or colors aren't applying from wallpaper theming, this may be due to large wallpaper images failing color generation. Go to Settings → Advanced → Max image pixels and increase the limit for your wallpaper size. You can set to 0 for unlimited, but be careful with untrusted images as very large files could use excessive memory.
 
+### Git-based Configuration Management
+This repository supports using **GNU Stow** for symlink-based configuration management, allowing you to track all your dotfile changes in git:
+
+1. **Clone the repository** to your preferred location (e.g., `~/Projects/fedora-hyprland`)
+2. **Run the installer** as normal to get all dependencies and initial setup
+3. **Set up symlinks** using GNU Stow:
+   ```bash
+   # Install GNU Stow
+   sudo dnf install stow
+   
+   # Navigate to the cloned repository
+   cd ~/Projects/fedora-hyprland
+   
+   # Create symlinks (this will backup and adopt your existing configs)
+   stow --adopt --no-folding -t ~ .
+   ```
+4. **Track changes** - All config modifications are now tracked in git and can be committed/reverted
+5. **Update upstream** - Pull latest changes with `git pull` and resolve any conflicts with git
+6. **Contribute back** - Create feature branches and contribute improvements back to the project
+
+**Benefits:**
+- All configuration changes are version controlled
+- Easy to sync configurations across multiple machines  
+- Simple rollback of problematic changes
+- Ability to contribute customizations back to the community
+- Seamless integration of upstream updates
+
 ### Keybinds
   
    - **Default keybinds**: Should be somewhat familiar if you've used Windows or GNOME. 

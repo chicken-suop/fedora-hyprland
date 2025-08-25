@@ -20,8 +20,12 @@ _darcs
 
 # Additional ignores for this repository
 
-# Scripts and installers (match basename)
-.*\.sh$
+# Root-level installation scripts only
+^/install\.sh$
+^/uninstall\.sh$
+^/update\.sh$
+^/setup\.sh$
+^/manual-install-helper\.sh$
 diagnose
 
 # Documentation (already covered by defaults for README/LICENSE)
@@ -34,8 +38,7 @@ diagnose
 ^/Extras
 ^/licenses
 
-# Python files
-.*\.py$
+# Python cache files only (not all .py files)
 .*\.pyc$
 __pycache__
 ^/requirements\.txt
