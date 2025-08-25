@@ -11,6 +11,16 @@ if status is-interactive # Commands to run in interactive sessions can go here
     # No greeting
     set fish_greeting
 
+    # Set code as default editor
+    set -gx EDITOR code
+    set -gx VISUAL code
+
+    # Qt/Wayland environment variables for better compatibility
+    set -gx QT_QPA_PLATFORM wayland
+    set -gx QT_WAYLAND_DISABLE_WINDOWDECORATION 1
+    set -gx QT_AUTO_SCREEN_SCALE_FACTOR 1
+    set -gx QT_WAYLAND_FORCE_DPI 96
+
     # Use starship
     starship init fish | source
     if test -f ~/.local/state/quickshell/user/generated/terminal/sequences.txt
@@ -22,5 +32,16 @@ if status is-interactive # Commands to run in interactive sessions can go here
     alias ls 'eza --icons'
     alias clear "printf '\033[2J\033[3J\033[1;1H'"
     alias q 'qs -c ii'
-    
+    alias s 'kitten ssh'
+    alias pramdb-tunnel 'autossh -M 0 -N pram-tunnel'
+
 end
+
+# BUN environment variable
+set -gx BUN_INSTALL "$HOME/.bun"
+
+# Add Bun to PATH
+fish_add_path $HOME/.bun/bin
+
+# Add NVM Node.js to PATH
+fish_add_path $HOME/.nvm/versions/node/v24.4.1/bin
