@@ -32,8 +32,15 @@ if status is-interactive # Commands to run in interactive sessions can go here
     alias ls 'eza --icons'
     alias clear "printf '\033[2J\033[3J\033[1;1H'"
     alias q 'qs -c ii'
-    alias s 'kitten ssh'
     alias pramdb-tunnel 'autossh -M 0 -N pram-tunnel'
+
+    # Kitty integration
+    if test "$TERM" = "xterm-kitty"
+        alias s 'kitty +kitten ssh'
+        alias icat "kitty +kitten icat"
+        alias d "kitty +kitten diff"
+        alias hg "kitten hyperlinked_grep"
+    end
 
 end
 
