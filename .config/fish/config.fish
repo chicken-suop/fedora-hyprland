@@ -45,3 +45,16 @@ fish_add_path $HOME/.bun/bin
 
 # Add NVM Node.js to PATH
 fish_add_path $HOME/.nvm/versions/node/v24.4.1/bin
+
+# Pyenv configuration
+set -gx PYENV_ROOT "$HOME/.pyenv"
+fish_add_path "$PYENV_ROOT/bin"
+pyenv init - fish | source
+pyenv virtualenv-init - fish | source
+
+# pnpm
+set -gx PNPM_HOME "/home/elliot/.local/share/pnpm"
+if not string match -q -- $PNPM_HOME $PATH
+  set -gx PATH "$PNPM_HOME" $PATH
+end
+# pnpm end

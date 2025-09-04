@@ -20,7 +20,27 @@ Singleton {
         id: wallColorQuant
         property string wallpaperPath: Config.options.background.wallpaperPath
         property bool wallpaperIsVideo: wallpaperPath.endsWith(".mp4") || wallpaperPath.endsWith(".webm") || wallpaperPath.endsWith(".mkv") || wallpaperPath.endsWith(".avi") || wallpaperPath.endsWith(".mov")
-        source: Qt.resolvedUrl(wallpaperIsVideo ? Config.options.background.thumbnailPath : Config.options.background.wallpaperPath)
+        source: {
+            // For videos, use thumbnail
+            if (wallpaperIsVideo) {
+                return Qt.resolvedUrl(Config.options.background.thumbnailPath);
+            }
+
+            // Try to use the configured wallpaper path
+            let path = Config.options.background.wallpaperPath;
+            if (!path) return "";
+
+            // For upscaled images that might exceed Qt's memory limit, try fallback to original
+            let fallbackPath = path.replace(/_upscayl_\d+x_[^.]*(?=\.[^.]*$)|_\d+x(?=\.[^.]*$)|_upscaled(?=\.[^.]*$)/g, "");
+
+            // If fallback path is different and the original exists, use it for color extraction
+            if (fallbackPath !== path) {
+                // Try fallback path first for large images
+                return Qt.resolvedUrl(fallbackPath);
+            }
+
+            return Qt.resolvedUrl(path);
+        }
         depth: 0 // 2^0 = 1 color
         rescaleSize: 10
     }
