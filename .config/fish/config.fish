@@ -7,6 +7,8 @@ function fish_prompt -d "Write out the prompt"
 end
 
 if status is-interactive # Commands to run in interactive sessions can go here
+    # Hayase alias
+    alias hayase='/home/elliot/Applications/linux-hayase-6.4.26-linux.AppImage'
 
     # No greeting
     set fish_greeting
@@ -33,6 +35,7 @@ if status is-interactive # Commands to run in interactive sessions can go here
     alias clear "printf '\033[2J\033[3J\033[1;1H'"
     alias q 'qs -c ii'
     alias pramdb-tunnel 'autossh -M 0 -N pram-tunnel'
+    alias record-audio 'ffmpeg -f pulse -i alsa_input.usb-K66_K66_20190805V001-00.analog-stereo -f pulse -i alsa_output.usb-Schiit_Audio_Schiit_USB_Multibit-00.analog-stereo.monitor -map 0:0 -ac 2 -ar 96000 -sample_fmt s32 input.wav -map 1:0 -ac 2 -ar 96000 -sample_fmt s32 output.wav'
 
     # Kitty integration
     if test "$TERM" = "xterm-kitty"
@@ -65,3 +68,4 @@ if not string match -q -- $PNPM_HOME $PATH
   set -gx PATH "$PNPM_HOME" $PATH
 end
 # pnpm end
+alias git-redate="git rebase --exec \"GIT_COMMITTER_DATE=\\\"\$(date)\\\" git commit --amend --no-edit --date=\\\"\$(date)\\\""
