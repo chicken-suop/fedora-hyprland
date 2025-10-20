@@ -1,0 +1,21 @@
+module qs.modules.sidebarLeft
+AiChat 1.0 AiChat.qml
+Anime 1.0 Anime.qml
+ApiCommandButton 1.0 ApiCommandButton.qml
+ApiInputBoxIndicator 1.0 ApiInputBoxIndicator.qml
+DescriptionBox 1.0 DescriptionBox.qml
+SidebarLeftContent 1.0 SidebarLeftContent.qml
+SidebarLeft 1.0 SidebarLeft.qml
+Translator 1.0 Translator.qml
+AiMessageControlButton 1.0 aiChat/AiMessageControlButton.qml
+AiMessage 1.0 aiChat/AiMessage.qml
+AnnotationSourceButton 1.0 aiChat/AnnotationSourceButton.qml
+AttachedFileIndicator 1.0 aiChat/AttachedFileIndicator.qml
+MessageCodeBlock 1.0 aiChat/MessageCodeBlock.qml
+MessageTextBlock 1.0 aiChat/MessageTextBlock.qml
+MessageThinkBlock 1.0 aiChat/MessageThinkBlock.qml
+SearchQueryButton 1.0 aiChat/SearchQueryButton.qml
+BooruImage 1.0 anime/BooruImage.qml
+BooruResponse 1.0 anime/BooruResponse.qml
+LanguageSelectorButton 1.0 translator/LanguageSelectorButton.qml
+TextCanvas 1.0 translator/TextCanvas.qml

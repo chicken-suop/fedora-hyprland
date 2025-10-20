@@ -1,0 +1,3 @@
+module qs.modules.common.models
+AdaptedMaterialScheme 1.0 AdaptedMaterialScheme.qml
+FolderListModelWithHistory 1.0 FolderListModelWithHistory.qml

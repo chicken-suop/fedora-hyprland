@@ -1,0 +1,9 @@
+module qs.modules.background
+Background 1.0 Background.qml
+CookieClock 1.0 cookieClock/CookieClock.qml
+CookieQuote 1.0 cookieClock/CookieQuote.qml
+HourHand 1.0 cookieClock/HourHand.qml
+HourMarks 1.0 cookieClock/HourMarks.qml
+MinuteHand 1.0 cookieClock/MinuteHand.qml
+SecondHand 1.0 cookieClock/SecondHand.qml
+TimeColumn 1.0 cookieClock/TimeColumn.qml

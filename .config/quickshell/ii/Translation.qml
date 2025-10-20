@@ -60,7 +60,7 @@ Singleton {
 
     FileView {
         id: translationFileView
-        path: root.languageCode?.length > 0 ? Qt.resolvedUrl(Directories.config + "/quickshell/translations/" + root.languageCode + ".json") : ""
+        path: root.languageCode?.length > 0 ? Quickshell.shellPath("translations/" + root.languageCode + ".json") : ""
 
         onLoaded: {
             var textContent = "";

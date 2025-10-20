@@ -144,7 +144,7 @@ ContentPage {
                     },
                     {
                         displayName: Translation.tr("Dots"),
-                        icon: "graph_6",
+                        icon: "more_horiz",
                         value: "dots"
                     },
                     {
@@ -187,7 +187,7 @@ ContentPage {
                     },
                     {
                         displayName: Translation.tr("Fill"),
-                        icon: "eraser_size_5",
+                        icon: "circle",
                         value: "fill"
                     },
                 ]
@@ -221,12 +221,12 @@ ContentPage {
                     },
                     {
                         displayName: Translation.tr("Medium"),
-                        icon: "eraser_size_2",
+                        icon: "fiber_manual_record",
                         value: "medium"
                     },
                     {
                         displayName: Translation.tr("Bold"),
-                        icon: "eraser_size_4",
+                        icon: "circle",
                         value: "bold"
                     },
                 ]
@@ -734,7 +734,7 @@ ContentPage {
     }
 
     ContentSection {
-        icon: "screenshot_frame_2"
+        icon: "crop_free"
         title: Translation.tr("Screenshot tool")
 
         ConfigSwitch {

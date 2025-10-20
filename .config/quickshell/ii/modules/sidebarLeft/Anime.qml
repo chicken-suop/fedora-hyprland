@@ -201,7 +201,7 @@ Item {
                     CookieWrappedMaterialSymbol {
                         Layout.alignment: Qt.AlignHCenter
                         iconSize: 60
-                        text: "bookmark_heart"
+                        text: "favorite"
                     }
                     StyledText {
                         id: widgetNameText
@@ -518,37 +518,38 @@ Item {
                     implicitWidth: switchesRow.implicitWidth
                     Layout.fillHeight: true
 
-                    RowLayout {
-                        id: switchesRow
-                        spacing: 5
+                    MouseArea {
                         anchors.centerIn: parent
+                        width: switchesRow.width
+                        height: switchesRow.height
+                        hoverEnabled: true
+                        PointingHandInteraction {}
+                        onPressed: {
+                            nsfwSwitch.checked = !nsfwSwitch.checked
+                        }
 
-                        MouseArea {
-                            anchors.fill: parent
-                            hoverEnabled: true
-                            PointingHandInteraction {}
-                            onPressed: {
-                                nsfwSwitch.checked = !nsfwSwitch.checked
+                        RowLayout {
+                            id: switchesRow
+                            spacing: 5
+
+                            StyledText {
+                                Layout.fillHeight: true
+                                Layout.leftMargin: 10
+                                Layout.alignment: Qt.AlignVCenter
+                                font.pixelSize: Appearance.font.pixelSize.smaller
+                                color: nsfwSwitch.enabled ? Appearance.colors.colOnLayer1 : Appearance.m3colors.m3outline
+                                text: Translation.tr("Allow NSFW")
                             }
-                        }
-
-                        StyledText {
-                            Layout.fillHeight: true
-                            Layout.leftMargin: 10
-                            Layout.alignment: Qt.AlignVCenter
-                            font.pixelSize: Appearance.font.pixelSize.smaller
-                            color: nsfwSwitch.enabled ? Appearance.colors.colOnLayer1 : Appearance.m3colors.m3outline
-                            text: Translation.tr("Allow NSFW")
-                        }
-                        StyledSwitch {
-                            id: nsfwSwitch
-                            enabled: Booru.currentProvider !== "zerochan"
-                            scale: 0.6
-                            Layout.alignment: Qt.AlignVCenter
-                            checked: (Persistent.states.booru.allowNsfw && Booru.currentProvider !== "zerochan")
-                            onCheckedChanged: {
-                                if (!nsfwSwitch.enabled) return;
-                                Persistent.states.booru.allowNsfw = checked;
+                            StyledSwitch {
+                                id: nsfwSwitch
+                                enabled: Booru.currentProvider !== "zerochan"
+                                scale: 0.6
+                                Layout.alignment: Qt.AlignVCenter
+                                checked: (Persistent.states.booru.allowNsfw && Booru.currentProvider !== "zerochan")
+                                onCheckedChanged: {
+                                    if (!nsfwSwitch.enabled) return;
+                                    Persistent.states.booru.allowNsfw = checked;
+                                }
                             }
                         }
                     }

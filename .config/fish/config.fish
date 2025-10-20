@@ -35,7 +35,7 @@ if status is-interactive # Commands to run in interactive sessions can go here
     alias clear "printf '\033[2J\033[3J\033[1;1H'"
     alias q 'qs -c ii'
     alias pramdb-tunnel 'autossh -M 0 -N pram-tunnel'
-    alias record-audio 'ffmpeg -f pulse -i alsa_input.usb-K66_K66_20190805V001-00.analog-stereo -f pulse -i alsa_output.usb-Schiit_Audio_Schiit_USB_Multibit-00.analog-stereo.monitor -map 0:0 -ac 2 -ar 96000 -sample_fmt s32 input.wav -map 1:0 -ac 2 -ar 96000 -sample_fmt s32 output.wav'
+    alias record-audio 'ffmpeg -f pulse -i alsa_input.usb-K66_K66_20190805V001-00.analog-stereo -f pulse -i alsa_output.usb-Schiit_Audio_Schiit_USB_Multibit-00.analog-stereo.monitor -map 0:0 -ac 2 -ar 96000 -sample_fmt s16 input.wav -map 1:0 -ac 2 -ar 96000 -sample_fmt s16 output.wav'
 
     # Kitty integration
     if test "$TERM" = "xterm-kitty"

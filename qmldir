@@ -1,0 +1,9 @@
+module qs
+singleton Appearance modules/common/Appearance.qml
+singleton Config modules/common/Config.qml
+singleton GlobalStates GlobalStates.qml
+singleton Translation Translation.qml
+singleton ColorUtils modules/common/functions/ColorUtils.qml
+singleton StringUtils modules/common/functions/StringUtils.qml
+singleton FileUtils modules/common/functions/FileUtils.qml
+ReloadPopup 1.0 ReloadPopup.qml

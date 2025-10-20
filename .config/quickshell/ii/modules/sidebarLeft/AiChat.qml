@@ -735,7 +735,7 @@ Inline w/ backslash and round brackets \\(e^{i\\pi} + 1 = 0\\)
                     text: Ai.getModel().name
                     tooltipText: Translation.tr("Current model: %1\nSet it with %2model MODEL")
                         .arg(Ai.getModel().name)
-                        .arg(root.commandPrefix)
+                        .arg(root ? (root.commandPrefix || "/") : "/")
                 }
 
                 ApiInputBoxIndicator { // Tool indicator
@@ -743,7 +743,7 @@ Inline w/ backslash and round brackets \\(e^{i\\pi} + 1 = 0\\)
                     text: Ai.currentTool.charAt(0).toUpperCase() + Ai.currentTool.slice(1)
                     tooltipText: Translation.tr("Current tool: %1\nSet it with %2tool TOOL")
                         .arg(Ai.currentTool)
-                        .arg(root.commandPrefix)
+                        .arg(root ? (root.commandPrefix || "/") : "/")
                 }
 
                 Item { Layout.fillWidth: true }
